@@ -3,7 +3,10 @@ import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2022-08-01",
 });
-console.log(process.env.STRIPE_SECRET_KEY);
+const redirectURL =
+process.env.NODE_ENV === 'development'
+  ? 'http://localhost:3000/checkout'
+  : 'https://lexie.vercel.app/checkout';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
@@ -28,8 +31,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       const session = await stripe.checkout.sessions.create({
         line_items: [...lineItems],
         mode: "payment",
-        success_url: "http://localhost:3000/checkout/success",
-        cancel_url: "http://localhost:3000/checkout/cancel",
+        success_url: `${redirectURL}/success`,
+        cancel_url: `${redirectURL}/cancel`,
       });
 
       res.status(200).json({ session });
