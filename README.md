@@ -6,7 +6,7 @@
 <img src="./assets/screen1.png" width="720">
 </p>
 
-This project was built using [https://dummyjson.com/](dummyjson.com) API, all products and categories are been fetched from the API.
+This project was built using [dummyjson.com](https://dummyjson.com/) API, all products and categories are been fetched from the API.
 ## Features
 - React Redux (Cart) Start managment
 - Stripe payment integration
