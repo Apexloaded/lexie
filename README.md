@@ -2,6 +2,9 @@
 <p align="left">
 <img src="./assets/screen.png" width="720">
 </p>
+<p align="left">
+<img src="./assets/screen1.png" width="720">
+</p>
 
 This project was built using [https://dummyjson.com/](dummyjson.com) API, all products and categories are been fetched from the API.
 ## Features
