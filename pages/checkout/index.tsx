@@ -21,13 +21,13 @@ export default function Checkout() {
   };
 
   useEffect(() => {
-    if(cartItem.length < 1) {
-        router.back();
+    if (cartItem.length < 1) {
+      router.back();
     }
-  }, [])
- 
-  if(cartItem.length < 1) {
-    return <div></div>
+  }, []);
+
+  if (cartItem.length < 1) {
+    return <div></div>;
   }
 
   return (
@@ -51,8 +51,8 @@ export default function Checkout() {
             <div className="h-full md:border-l md:px-5 border-neutral-300">
               <div className="max-w-md">
                 <Elements stripe={stripePromise} options={option}>
-                <StripeCheckoutForm cart={cartItem} />
-              </Elements>
+                  <StripeCheckoutForm cart={cartItem} />
+                </Elements>
               </div>
             </div>
           </div>
